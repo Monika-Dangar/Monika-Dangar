@@ -4,7 +4,7 @@ import Link from "next/link";
 import { FaCode, FaBars, FaTimes, FaFileCode } from "react-icons/fa";
 import { IoMdHome } from "react-icons/io";
 import { MdEmail } from "react-icons/md";
-import FloatingDockDemo from "../FloatingDockDemo";
+import FloatingDockDemo from "../FloatingDockCompo";
 
 const Navbar = () => {
   const [navbarOpen, setNavbarOpen] = useState(false);

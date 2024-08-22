@@ -1,9 +1,9 @@
 import React from "react";
 import { TypewriterEffect } from "./ui/typewriter-effect";
-import BentoGridDemo from "./BentoGridThirdDemo";
-import { CanvasRevealEffectDemo } from "./CanvasRevealEffectDemo";
 import Projects from "./projects/Projects";
 import Contact from "./contact/Contact";
+import BentoGridCompo from "./BentoGridCompo";
+import CanvasRevealEffectCompo from "./CanvasRevealEffectCompo";
 
 const Hero = () => {
   const typeWriterText = [
@@ -49,9 +49,9 @@ const Hero = () => {
           </p>
         </div>
       </div>
-      <BentoGridDemo />
+      <BentoGridCompo />
       <Projects />
-      <CanvasRevealEffectDemo />
+      <CanvasRevealEffectCompo />
       <Contact />
     </>
   );

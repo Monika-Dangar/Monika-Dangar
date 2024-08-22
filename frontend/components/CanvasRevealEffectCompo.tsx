@@ -7,7 +7,7 @@ import { FaMinus, FaSquare } from "react-icons/fa";
 import { TbXboxXFilled } from "react-icons/tb";
 import { TypewriterEffect } from "./ui/typewriter-effect";
 
-export function CanvasRevealEffectDemo() {
+export default function CanvasRevealEffectCompo() {
   const [isClient, setIsClient] = useState(false);
 
   useEffect(() => {

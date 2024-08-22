@@ -1,11 +1,11 @@
 import React from "react";
-import AnimatedPinDemo from "../AnimatedPinDemo";
+import AnimatedPinCompo from "../AnimatedPinCompo";
 
 const Projects = () => {
   return (
     <>
       <div className="relative z-10 ">
-        <AnimatedPinDemo />
+        <AnimatedPinCompo />
       </div>
     </>
   );

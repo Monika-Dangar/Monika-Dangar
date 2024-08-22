@@ -5,7 +5,7 @@ import { projects } from "@/data/index";
 import { PinContainer } from "./ui/3d-pin";
 import { TypewriterEffect } from "./ui/typewriter-effect";
 
-const AnimatedPinDemo = () => {
+const AnimatedPinCompo = () => {
   const [isClient, setIsClient] = useState(false);
 
   useEffect(() => {
@@ -91,4 +91,4 @@ const AnimatedPinDemo = () => {
   );
 };
 
-export default AnimatedPinDemo;
+export default AnimatedPinCompo;

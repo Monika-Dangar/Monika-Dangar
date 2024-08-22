@@ -1,7 +1,7 @@
 import { gridItems } from "@/data/index";
 import { BentoGrid, BentoGridItem } from "./ui/bento-grid";
 
-const BentoGridDemo = () => {
+const BentoGridCompo = () => {
   return (
     <section id="about">
       <BentoGrid className="w-full py-20 ">
@@ -23,4 +23,4 @@ const BentoGridDemo = () => {
   );
 };
 
-export default BentoGridDemo;
+export default BentoGridCompo;
