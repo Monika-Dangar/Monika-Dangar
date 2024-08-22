@@ -16,6 +16,7 @@ app.use(cors({
   credentials: true
 }));
 
+
 const uri = process.env.ATLAS_URI;
 if (!uri) {
   throw new Error('MongoDB connection string is not defined in environment variables');
