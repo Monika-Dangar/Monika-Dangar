@@ -1,6 +1,5 @@
 <!--
 **Monika-Dangar/Monika-Dangar** is a ✨ _special_ ✨ repository because its `README.md` (this file) appears on your GitHub profile.
-
 # 🎨 Welcome to My Portfolio Website 👋
 
 Welcome to my personal portfolio website! This site is designed to showcase my skills, projects, and professional journey. Explore my work and get in touch with me through the live site:
