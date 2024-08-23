@@ -12,7 +12,7 @@ app.use(express.json());
 
 // CORS configuration
 app.use(cors({
-  origin: 'https://portfoliosite-hazel.vercel.app', // Allow your frontend domain
+  origin: 'https://monika-dangar-portfoliosite.vercel.app/', // Allow your frontend domain
   methods: ['GET', 'POST', 'PUT', 'DELETE'],
   credentials: true
 }));

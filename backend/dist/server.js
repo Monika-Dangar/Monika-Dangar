@@ -14,7 +14,7 @@ const port = process.env.PORT || 5000;
 app.use(express_1.default.json());
 // CORS configuration
 app.use((0, cors_1.default)({
-    origin: 'https://portfoliosite-hazel.vercel.app', // Allow your frontend domain
+    origin: 'https://monika-dangar-portfoliosite.vercel.app/', // Allow your frontend domain
     methods: ['GET', 'POST', 'PUT', 'DELETE'],
     credentials: true
 }));
