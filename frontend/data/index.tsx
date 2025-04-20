@@ -46,6 +46,15 @@ export const gridItems = [
 export const projects = [
   {
     id: 1,
+    title: "Pen & Paper",
+    des: "A platform for writers to share their creative works, including essays, poems, short stories, and thoughts. Readers can explore the content freely, without needing an account, and can engage by liking, commenting, and interacting with the content. Writers can authenticate, manage their content, and submit new works easily.",
+    img: "pen-and-paper.png",
+    iconLists: ["/re.svg", "/tail.svg", "/mongodb.svg", "/nodejs.svg"],
+    linkName: "/pen-and-paper.app",
+    link: process.env.NEXT_PUBLIC_PEN_AND_PAPER_URL,
+  },
+  {
+    id: 2,
     title: "Job Finder",
     des: "A comprehensive application using Vite, Tailwind CSS, Node.js, and various librabries including Redux Toolkit and React Hook Form.",
     img: "/job-finder.png",
