@@ -4,7 +4,7 @@ import AnimatedPinCompo from "../AnimatedPinCompo";
 const Projects = () => {
   return (
     <>
-      <div className="relative z-10 ">
+      <div className="relative z-10 bg-secondary font-mono">
         <AnimatedPinCompo />
       </div>
     </>
