@@ -89,39 +89,40 @@ export const interactiveCards = [
     animatedSpeed: 5.1,
     text: [
       <p key="1">
-        1. Nice to meet you! I'm Monika, I'm{" "}
-        <span style={{ color: "#E63946" }}>a Web Developer</span>.
+        1. Nice to meet you! I'm Monika,{" "}
+        <span className="text-accent-blue">a Web Developer</span>.
       </p>,
-      ,
       <p key="2">
         2. I'm passionate about both{" "}
-        <span style={{ color: "#3A0CA3" }}>web design</span> and{" "}
-        <span style={{ color: "#008000" }}>web development</span>, with a
-        particular focus on{" "}
-        <span style={{ color: "#B69121" }}>front-end development</span> and in
-        all of its aspects. This is where both my{" "}
-        <span style={{ color: "#C9184A" }}>technical</span> and{" "}
-        <span style={{ color: "#8900F2" }}>creative</span> skills can be used at
-        their best.
+        <span className="text-accent-blue">web design</span> and{" "}
+        <span className="text-accent-purple">web development</span>, with a
+        focus on <span className="text-accent-blue">front-end development</span>{" "}
+        and all its aspects. Here, I can best utilize both my{" "}
+        <span className="text-accent-purple">technical</span> and{" "}
+        <span className="text-accent-blue">creative</span> skills.
       </p>,
-      ,
       <p key="3">
-        <span style={{ color: "#023E8A" }}>3. Coding</span> for me is not just
-        my work, I like <span style={{ color: "#EF233C" }}>experimenting</span>{" "}
-        with many <span style={{ color: "#CA67020" }}>technologies</span> and I
-        also maintain some{" "}
-        <span style={{ color: "#197278" }}>personal projects</span>. Whenever I
-        can, I like to contribute to open-source to give back to the community.
+        3. <span className="text-accent-purple">Coding</span> for me is more
+        than just work—I enjoy{" "}
+        <span className="text-accent-blue">experimenting</span> with various{" "}
+        <span className="text-accent-purple">technologies</span> and maintaining{" "}
+        <span className="text-accent-blue">personal projects</span>. Whenever
+        possible, I contribute to open-source to give back to the community.
       </p>,
-      ,
     ],
   },
   {
     id: 2,
     title: "where-i-live",
     text: [
-      "1. Currently based in Mumbai, India",
-      "2. available for remote collaboration acroos India and worldwide🌍",
+      <p key="1">
+        1. Currently based in{" "}
+        <span className="text-accent-blue">Mumbai, India</span>.
+      </p>,
+      <p key="2">
+        2. Available for remote collaboration across India and worldwide.{" "}
+        <span className="text-accent-purple">🌍</span>
+      </p>,
     ],
     animatedSpeed: 5.1,
   },
@@ -133,38 +134,41 @@ export const interactiveCards = [
         href={process.env.NEXT_PUBLIC_LINKEDIN_URL}
         target="_blank"
         rel="noopener noreferrer"
-        className="flex items-center"
+        className="flex items-center text-accent-blue hover:text-accent-purple transition-colors duration-200"
         key="1"
       >
         1. LinkedIn
-        <TiLocationArrow />
+        <TiLocationArrow className="ml-1" />
       </a>,
       <a
         href={process.env.NEXT_PUBLIC_GITHUB_URL}
         target="_blank"
         rel="noopener noreferrer"
-        className="flex items-center"
+        className="flex items-center text-accent-blue hover:text-accent-purple transition-colors duration-200"
         key="2"
       >
-        2. GitHub <TiLocationArrow />
+        2. GitHub
+        <TiLocationArrow className="ml-1" />
       </a>,
       <a
         href={process.env.NEXT_PUBLIC_TWITTER_URL}
         target="_blank"
         rel="noopener noreferrer"
-        className="flex items-center"
+        className="flex items-center text-accent-blue hover:text-accent-purple transition-colors duration-200"
         key="3"
       >
-        3. X (Twitter) <TiLocationArrow />
+        3. X (Twitter)
+        <TiLocationArrow className="ml-1" />
       </a>,
       <a
         href={process.env.NEXT_PUBLIC_INSTAGRAM_URL}
         target="_blank"
         rel="noopener noreferrer"
-        className="flex items-center"
+        className="flex items-center text-accent-blue hover:text-accent-purple transition-colors duration-200"
         key="4"
       >
-        4. Instagram <TiLocationArrow />
+        4. Instagram
+        <TiLocationArrow className="ml-1" />
       </a>,
     ],
     animatedSpeed: 5.1,
@@ -172,7 +176,17 @@ export const interactiveCards = [
   {
     id: 4,
     title: "hobbies",
-    text: ["1. 📖Reading", "2. 🏔️Hiking", "3. 💃Dancing"],
+    text: [
+      <p key="1">
+        1. <span className="text-accent-blue">📖 Reading</span>.
+      </p>,
+      <p key="2">
+        2. <span className="text-accent-purple">🏔️ Hiking</span>.
+      </p>,
+      <p key="3">
+        3. <span className="text-accent-blue">💃 Dancing</span>.
+      </p>,
+    ],
     animatedSpeed: 5.1,
   },
 ];

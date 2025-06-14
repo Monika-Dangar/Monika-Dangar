@@ -29,16 +29,16 @@ export function SignupForm() {
   } = useForm<IFormInput>();
 
   const typeWriterText = [
-    { text: "let" },
-    { text: "us" },
-    { text: "grab " },
-    { text: "a" },
-    { text: "virtual" },
-    { text: "tea" },
-    { text: "or" },
-    { text: "drop", className: "text-white" },
-    { text: "a", className: "text-white" },
-    { text: "line", className: "text-white" },
+    { text: "let", className: "text-primary" },
+    { text: "us", className: "text-primary" },
+    { text: "grab ", className: "text-primary" },
+    { text: "a", className: "text-primary" },
+    { text: "virtual", className: "text-primary" },
+    { text: "tea", className: "text-primary" },
+    { text: "or", className: "text-primary" },
+    { text: "drop", className: "text-accent-blue" },
+    { text: "a", className: "text-accent-blue" },
+    { text: "line", className: "text-accent-blue" },
   ];
 
   const onSubmit: SubmitHandler<IFormInput> = async (data) => {
@@ -56,8 +56,8 @@ export function SignupForm() {
 
       if (response) {
         console.log("fellow added Successfully");
-        setAnimationVisible(true); // Show animation on successful submission
-        reset(); // Reset the form fields after successful submission
+        setAnimationVisible(true);
+        reset();
       }
     } catch (error) {
       console.error("Error:", error);
@@ -74,72 +74,89 @@ export function SignupForm() {
   };
 
   return (
-    <div className="py-20" id="contact">
+    <div className="py-20 bg-secondary font-mono" id="contact">
       <TypewriterEffect words={typeWriterText} />
       <div
-        className="max-w-md w-full mx-auto rounded-2xl p-4 md:p-8 shadow-input dark:bg-black my-20"
+        className="max-w-md w-full mx-auto rounded-2xl p-4 md:p-8 shadow-[0_4px_12px_rgb(0_0_0/0.2)] bg-secondary my-20"
         style={{
           backgroundImage:
-            "linear-gradient(-225deg, #2CD8D5 0%, #C5C1FF 56%, #FFBAC3 100%)",
+            "linear-gradient(135deg, rgba(56, 189, 248, 0.1) 0%, rgba(167, 139, 250, 0.1) 100%)",
         }}
       >
         <form className="my-8" onSubmit={handleSubmit(onSubmit)}>
           <LabelInputContainer className="mb-4">
-            <Label htmlFor="fullname">
-              Full name<span className="text-red-600">*</span>
+            <Label htmlFor="fullname" className="text-primary font-normal">
+              Full name<span className="text-accent-purple">*</span>
             </Label>
             <Input
               id="fullname"
               type="text"
+              className="text-primary bg-secondary border-gray-700 focus:border-accent-blue focus:ring-accent-blue transition-colors duration-200"
               {...register("fellowname", { required: "Full name is required" })}
               aria-required="true"
             />
             {errors.fellowname && (
-              <p className="text-red-600">{errors.fellowname.message}</p>
+              <p className="text-accent-purple">{errors.fellowname.message}</p>
             )}
           </LabelInputContainer>
 
           <LabelInputContainer className="mb-4">
-            <Label htmlFor="companyname">Company name</Label>
-            <Input id="companyname" type="text" {...register("companyname")} />
+            <Label htmlFor="companyname" className="text-primary font-normal">
+              Company name
+            </Label>
+            <Input
+              id="companyname"
+              type="text"
+              className="text-primary bg-secondary border-gray-700 focus:border-accent-blue focus:ring-accent-blue transition-colors duration-200"
+              {...register("companyname")}
+            />
           </LabelInputContainer>
 
           <LabelInputContainer className="mb-4">
-            <Label htmlFor="website">Website</Label>
-            <Input id="website" type="text" {...register("websitename")} />
+            <Label htmlFor="website" className="text-primary font-normal">
+              Website
+            </Label>
+            <Input
+              id="website"
+              type="text"
+              className="text-primary bg-secondary border-gray-700 focus:border-accent-blue focus:ring-accent-blue transition-colors duration-200"
+              {...register("websitename")}
+            />
           </LabelInputContainer>
 
           <LabelInputContainer className="mb-4">
-            <Label htmlFor="email">
-              Email Address<span className="text-red-600">*</span>
+            <Label htmlFor="email" className="text-primary font-normal">
+              Email Address<span className="text-accent-purple">*</span>
             </Label>
             <Input
               id="email"
               type="email"
+              className="text-primary bg-secondary border-gray-700 focus:border-accent-blue focus:ring-accent-blue transition-colors duration-200"
               {...register("emailladdress", {
                 required: "Email address is required",
               })}
               aria-required="true"
             />
             {errors.emailladdress && (
-              <p className="text-red-600">{errors.emailladdress.message}</p>
+              <p className="text-accent-purple">{errors.emailladdress.message}</p>
             )}
           </LabelInputContainer>
 
           <LabelInputContainer className="mb-4">
-            <Label htmlFor="message">
-              Your message<span className="text-red-600">*</span>
+            <Label htmlFor="message" className="text-primary font-normal">
+              Your message<span className="text-accent-purple">*</span>
             </Label>
             <Input
               id="message"
               type="text"
+              className="text-primary bg-secondary border-gray-700 focus:border-accent-blue focus:ring-accent-blue transition-colors duration-200"
               {...register("fellowmessage", {
                 required: "Your message is required",
               })}
               aria-required="true"
             />
             {errors.fellowmessage && (
-              <p className="text-red-600">{errors.fellowmessage.message}</p>
+              <p className="text-accent-purple">{errors.fellowmessage.message}</p>
             )}
           </LabelInputContainer>
 
@@ -166,8 +183,8 @@ export function SignupForm() {
 const BottomGradient = () => {
   return (
     <>
-      <span className="group-hover/btn:opacity-100 block transition duration-500 opacity-0 absolute h-px w-full -bottom-px inset-x-0 bg-gradient-to-r from-transparent via-cyan-500 to-transparent" />
-      <span className="group-hover/btn:opacity-100 blur-sm block transition duration-500 opacity-0 absolute h-px w-1/2 mx-auto -bottom-px inset-x-10 bg-gradient-to-r from-transparent via-indigo-500 to-transparent" />
+      <span className="group-hover/btn:opacity-100 block transition duration-500 opacity-0 absolute h-px w-full -bottom-px inset-x-0 bg-gradient-to-r from-transparent via-accent-blue to-transparent" />
+      <span className="group-hover/btn:opacity-100 blur-sm block transition duration-500 opacity-0 absolute h-px w-1/2 mx-auto -bottom-px inset-x-10 bg-gradient-to-r from-transparent via-accent-purple to-transparent" />
     </>
   );
 };
@@ -180,7 +197,7 @@ const LabelInputContainer = ({
   className?: string;
 }) => {
   return (
-    <div className={cn("flex flex-col space-y-2 w-full", className)}>
+    <div className={cn("flex flex-col space-y-2 w-full font-mono", className)}>
       {children}
     </div>
   );
