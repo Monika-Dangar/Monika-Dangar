@@ -44,7 +44,7 @@ const FloatingDockMenu = ({
     <>
       {/* Mobile Navigation Menu */}
       <motion.div
-        className="z-50 md:hidden flex flex-row gap-4 rounded-full dark:bg-neutral-800 shadow-md"
+        className="z-50 md:hidden flex flex-row gap-4 rounded-full bg-secondary shadow-[0_4px_12px_rgb(0_0_0/0.2)]"
         onTouchMove={handleTouchMove}
       >
         {items.map((item, idx) => (
@@ -63,7 +63,7 @@ const FloatingDockMenu = ({
       <motion.div
         onMouseMove={handleMouseMove}
         onMouseLeave={() => mouseX.set(Infinity)}
-        className="z-50 hidden md:flex flex-row gap-4 items-center rounded-full dark:bg-neutral-800 shadow-md"
+        className="z-50 hidden md:flex flex-row gap-4 items-center rounded-full bg-secondary shadow-[0_4px_12px_rgb(0_0_0/0.2)]"
       >
         {items.map((item) => (
           <IconContainer
@@ -140,7 +140,7 @@ function IconContainer({
         style={{ width, height }}
         onMouseEnter={() => !isMobile && setHovered(true)}
         onMouseLeave={() => !isMobile && setHovered(false)}
-        className="aspect-square rounded-full bg-gray-200 dark:bg-neutral-800 flex items-center justify-center relative"
+        className="aspect-square rounded-full bg-secondary border border-gray-700 hover:bg-accent-blue/20 transition-colors duration-200 flex items-center justify-center relative"
       >
         <AnimatePresence>
           {hovered && !isMobile && (
@@ -148,7 +148,7 @@ function IconContainer({
               initial={{ opacity: 0, y: 10, x: "-50%" }}
               animate={{ opacity: 1, y: 0, x: "-50%" }}
               exit={{ opacity: 0, y: 2, x: "-50%" }}
-              className="px-2 py-0.5 whitespace-pre rounded-md bg-gray-100 border dark:bg-neutral-800 dark:border-neutral-900 dark:text-white border-gray-200 text-neutral-700 absolute left-1/2 -translate-x-1/2 -top-8 w-fit text-xs"
+              className="px-2 py-0.5 whitespace-pre rounded-md bg-secondary border border-gray-700 text-primary absolute left-1/2 -translate-x-1/2 -top-8 w-fit text-sm font-mono font-light"
             >
               {title}
             </motion.div>

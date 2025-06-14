@@ -11,16 +11,16 @@ import { floatingDock } from "../data/index";
 
 const iconMap = {
   IconBrandInstagram: (
-    <IconBrandInstagram className="h-full w-full text-black dark:text-neutral-300" />
+    <IconBrandInstagram className="h-full w-full text-primary hover:text-accent-purple transition-colors duration-200" />
   ),
   IconBrandLinkedin: (
-    <IconBrandLinkedin className="h-full w-full text-black dark:text-neutral-300" />
+    <IconBrandLinkedin className="h-full w-full text-primary hover:text-accent-purple transition-colors duration-200" />
   ),
   IconBrandX: (
-    <IconBrandX className="h-full w-full text-black dark:text-neutral-300" />
+    <IconBrandX className="h-full w-full text-primary hover:text-accent-purple transition-colors duration-200" />
   ),
   IconBrandGithub: (
-    <IconBrandGithub className="h-full w-full text-black dark:text-neutral-300" />
+    <IconBrandGithub className="h-full w-full text-primary hover:text-accent-purple transition-colors duration-200" />
   ),
 };
 
@@ -32,7 +32,7 @@ export default function FloatingDockDemo() {
   }));
 
   return (
-    <div className="flex items-center h-[35rem]">
+    <div className="flex items-center  bg-secondary font-mono">
       <FloatingDock
         mobileClassName="translate-y-20" // only for demo, remove for production
         items={links}
