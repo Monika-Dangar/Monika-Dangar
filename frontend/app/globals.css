@@ -1,3 +1,102 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+/* globals.css */
+/* .bg-primary {
+    background-color: #0A0E1F;
+}
+
+.bg-secondary {
+    background-color: #1A1E33;
+}
+
+.text-primary {
+    color: #F1F5F9;
+}
+
+.text-secondary {
+    color: #94A3B8;
+}
+
+.text-accent-blue {
+    color: #38BDF8;
+}
+
+.text-accent-purple {
+    color: #A78BFA;
+}
+
+.border-gray-700 {
+    border-color: #2D3748;
+}
+
+.border-accent-blue {
+    border-color: #38BDF8;
+} */
+
+:root {
+    --primary-bg: #0A0E1F;
+    --secondary-bg: #1A1E33;
+    --text-primary: #F1F5F9;
+    --text-secondary: #94A3B8;
+    --accent-blue: #38BDF8;
+    --accent-purple: #A78BFA;
+    --border-color: #2D3748;
+}
+
+.bg-primary {
+    background-color: var(--primary-bg);
+}
+
+.bg-secondary {
+    background-color: var(--secondary-bg);
+}
+
+.text-primary {
+    color: var(--text-primary);
+}
+
+.text-secondary {
+    color: var(--text-secondary);
+}
+
+.text-accent-blue {
+    color: var(--accent-blue);
+}
+
+.text-accent-purple {
+    color: var(--accent-purple);
+}
+
+.border-gray-700 {
+    border-color: var(--border-color);
+}
+
+.border-accent-blue {
+    border-color: var(--accent-blue);
+}
+
+.bg-accent-blue\/20 {
+    background-color: rgba(56, 189, 248, 0.2);
+}
+
+.bg-accent-blue\/40 {
+    background-color: rgba(56, 189, 248, 0.4);
+}
+
+.bg-accent-purple\/20 {
+    background-color: rgba(167, 139, 250, 0.2);
+}
+
+.bg-accent-purple\/40 {
+    background-color: rgba(167, 139, 250, 0.4);
+}
+
+.tech-stack-item {
+    transition: all 0.2s ease;
+}
+
+.tech-stack-item:hover {
+    transform: scale(1.05);
+}

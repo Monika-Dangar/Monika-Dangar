@@ -7,8 +7,11 @@ import * as THREE from "three";
 export const CanvasRevealEffect = ({
   animationSpeed = 0.4,
   opacities = [0.3, 0.3, 0.3, 0.5, 0.5, 0.5, 0.8, 0.8, 0.8, 1],
-  colors,
-  containerClassName = "linear-gradient(-225deg, #2CD8D5 0%, #C5C1FF 56%, #FFBAC3 100%)",
+  colors = [
+    [56, 189, 248], // #38BDF8 (accent-blue)
+    [167, 139, 250], // #A78BFA (accent-purple)
+  ],
+  containerClassName,
   dotSize,
   showGradient = true,
 }: {
@@ -20,17 +23,12 @@ export const CanvasRevealEffect = ({
   showGradient?: boolean;
 }) => {
   return (
-    <div
-      className={cn("h-full relative w-full ")}
-      style={{ backgroundImage: containerClassName }}
-    >
-      <div className="h-full w-full ">
+    <div className={cn("h-full relative w-full", containerClassName)}>
+      <div className="h-full w-full">
         <DotMatrix
-          colors={colors ?? [[255, 255, 255]]}
+          colors={colors}
           dotSize={dotSize ?? 3}
-          opacities={
-            opacities ?? [0.3, 0.3, 0.3, 0.5, 0.5, 0.5, 0.8, 0.8, 0.8, 1]
-          }
+          opacities={opacities}
           shader={`
               float animation_speed_factor = ${animationSpeed.toFixed(1)};
               float intro_offset = distance(u_resolution / 2.0 / u_total_size, st2) * 0.01 + (random(st2) * 0.15);
@@ -40,7 +38,15 @@ export const CanvasRevealEffect = ({
           center={["x", "y"]}
         />
       </div>
-      {showGradient && <div className="absolute inset-0 " />}
+      {showGradient && (
+        <div
+          className="absolute inset-0"
+          style={{
+            backgroundImage:
+              "linear-gradient(135deg, rgba(56, 189, 248, 0.3) 0%, rgba(167, 139, 250, 0.3) 100%)",
+          }}
+        />
+      )}
     </div>
   );
 };
@@ -55,7 +61,10 @@ interface DotMatrixProps {
 }
 
 const DotMatrix: React.FC<DotMatrixProps> = ({
-  colors = [[0, 0, 0]],
+  colors = [
+    [56, 189, 248], // #38BDF8
+    [167, 139, 250], // #A78BFA
+  ],
   opacities = [0.04, 0.04, 0.04, 0.04, 0.04, 0.08, 0.08, 0.08, 0.08, 0.14],
   totalSize = 4,
   dotSize = 2,
@@ -137,16 +146,14 @@ const DotMatrix: React.FC<DotMatrixProps> = ({
         }
         void main() {
             vec2 st = fragCoord.xy;
-            ${
-              center.includes("x")
-                ? "st.x -= abs(floor((mod(u_resolution.x, u_total_size) - u_dot_size) * 0.5));"
-                : ""
-            }
-            ${
-              center.includes("y")
-                ? "st.y -= abs(floor((mod(u_resolution.y, u_total_size) - u_dot_size) * 0.5));"
-                : ""
-            }
+            ${center.includes("x")
+          ? "st.x -= abs(floor((mod(u_resolution.x, u_total_size) - u_dot_size) * 0.5));"
+          : ""
+        }
+            ${center.includes("y")
+          ? "st.y -= abs(floor((mod(u_resolution.y, u_total_size) - u_dot_size) * 0.5));"
+          : ""
+        }
       float opacity = step(0.0, st.x);
       opacity *= step(0.0, st.y);
 
@@ -178,6 +185,7 @@ type Uniforms = {
     type: string;
   };
 };
+
 const ShaderMaterial = ({
   source,
   uniforms,
@@ -247,11 +255,10 @@ const ShaderMaterial = ({
     preparedUniforms["u_time"] = { value: 0, type: "1f" };
     preparedUniforms["u_resolution"] = {
       value: new THREE.Vector2(size.width * 2, size.height * 2),
-    }; // Initialize u_resolution
+    };
     return preparedUniforms;
   };
 
-  // Shader material
   const material = useMemo(() => {
     const materialObject = new THREE.ShaderMaterial({
       vertexShader: `
@@ -288,11 +295,12 @@ const ShaderMaterial = ({
 
 const Shader: React.FC<ShaderProps> = ({ source, uniforms, maxFps = 60 }) => {
   return (
-    <Canvas className="absolute inset-0  h-full w-full">
+    <Canvas className="absolute inset-0 h-full w-full">
       <ShaderMaterial source={source} uniforms={uniforms} maxFps={maxFps} />
     </Canvas>
   );
 };
+
 interface ShaderProps {
   source: string;
   uniforms: {

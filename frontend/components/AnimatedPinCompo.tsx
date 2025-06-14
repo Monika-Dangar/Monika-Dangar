@@ -13,21 +13,16 @@ const AnimatedPinCompo = () => {
   }, []);
 
   const typeWriterText = [
-    {
-      text: "Project",
-    },
-    {
-      text: "highlight",
-      className: "text-white",
-    },
+    { text: "Project", className: "text-primary" },
+    { text: "highlight", className: "text-accent-blue" },
   ];
 
   if (!isClient) {
-    return null; // Return nothing or a loading spinner until client-side rendering is ready
+    return null;
   }
 
   return (
-    <div className="py-20" id="projects">
+    <div className="py-20 bg-secondary font-mono" id="projects">
       <TypewriterEffect words={typeWriterText} />
 
       <div className="flex flex-wrap items-center justify-center p-4 gap-16 mt-10">
@@ -47,17 +42,11 @@ const AnimatedPinCompo = () => {
                 </div>
               </div>
 
-              <h1 className="font-bold lg:text-2xl md:text-xl text-base line-clamp-1">
+              <h1 className="font-mono font-bold lg:text-2xl md:text-xl text-base text-primary line-clamp-1">
                 {item.title}
               </h1>
 
-              <p
-                className="lg:text-xl lg:font-normal font-light text-sm line-clamp-2"
-                style={{
-                  color: "#BEC1DD",
-                  margin: "1vh 0",
-                }}
-              >
+              <p className="font-mono lg:text-xl lg:font-light font-light text-sm text-secondary line-clamp-2">
                 {item.des}
               </p>
 
@@ -66,27 +55,53 @@ const AnimatedPinCompo = () => {
                   {item.iconLists.map((icon, index) => (
                     <div
                       key={index}
-                      className="border border-white/[.2] rounded-full bg-black lg:w-10 lg:h-10 w-8 h-8 flex justify-center items-center"
+                      className="border border-gray-700 rounded-full bg-secondary lg:w-10 lg:h-10 w-8 h-8 flex justify-center items-center"
                       style={{
                         transform: `translateX(-${5 * index + 2}px)`,
                       }}
                     >
-                      <img src={icon} alt="icon5" className="p-2" />
+                      <img src={icon} alt="icon" className="p-2" />
                     </div>
                   ))}
                 </div>
 
                 <div className="flex justify-center items-center">
-                  <p className="flex lg:text-xl md:text-xs text-sm text-purple">
+                  <p className="flex lg:text-xl md:text-xs text-sm text-accent-purple font-mono font-normal">
                     Check Live Site
                   </p>
-                  <FaLocationArrow className="ms-3" color="#CBACF9" />
+                  <FaLocationArrow className="ms-3 text-accent-purple" />
                 </div>
               </div>
             </PinContainer>
           </div>
         ))}
       </div>
+
+      {/* Override PinContainer styles */}
+      {/* <style jsx global>{`
+        .pin-container {
+          background-color: #1A1E33 !important;
+          background-image: linear-gradient(
+            135deg,
+            rgba(56, 189, 248, 0.1) 0%,
+            rgba(167, 139, 250, 0.1) 100%
+          ) !important;
+          color: #F1F5F9 !important;
+          font-family: 'Source Code Pro', monospace !important;
+          border: 1px solid #2D3748 !important;
+          border-radius: 1rem !important;
+        }
+        .pin-container * {
+          font-family: 'Source Code Pro', monospace !important;
+          color: inherit !important;
+        }
+        .project-card {
+          transition: transform 0.2s ease;
+        }
+        .project-card:hover {
+          transform: scale(1.02);
+        }
+      `}</style> */}
     </div>
   );
 };
