@@ -63,9 +63,11 @@ export const BentoGridItem = ({
             <Image
               src={spareImg}
               alt="Spare Image"
-              width={500}
-              height={500}
-              className={`object-cover object-center w-full h-full`}
+              width={id === 4 ? 250 : 500}
+              height={id === 4 ? 250 : 500}
+              // width={500}
+              // height={500}
+              className={`object-cover object-center w-full h-full mt-10`}
             />
           )}
 
@@ -83,7 +85,8 @@ export const BentoGridItem = ({
             {description}
           </div>
           <div
-            className="font-mono text-lg lg:text-3xl max-w-96 font-bold text-primary z-10"
+            // className="font-mono text-lg lg:text-3xl max-w-96 font-bold text-primary z-10"
+            className={`${id === 1 && "mb-5"} font-mono text-lg lg:text-3xl max-w-96 font-bold text-primary z-10`}
           >
             {title}
           </div>
@@ -118,6 +121,6 @@ export const BentoGridItem = ({
           )}
         </div>
       </div>
-    </div>
+    </div >
   );
 };

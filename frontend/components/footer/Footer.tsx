@@ -13,7 +13,7 @@ const Footer = () => {
                 fontFamily: "Source Code Pro, monospace",
               }}
             >
-              Monika<span className="text-white ">&lt;Dangar&gt;</span>
+              <span className="text-white">Monika&lt;Dangar&gt;</span>
             </h5>
           </div>
 
@@ -22,13 +22,13 @@ const Footer = () => {
               className=" flex justify-center space-x-4"
               style={{ fontFamily: "Source Code Pro, monospace" }}
             >
-              <Link href={"#about"} className="hover:text-gray-300">
+              <Link href={"#about"} className="text-primary hover:text-gray-300">
                 home
               </Link>
-              <Link href={"#projects"} className="hover:text-gray-300">
+              <Link href={"#projects"} className="text-primary hover:text-gray-300">
                 projects
               </Link>
-              <Link href={"#contact"} className="hover:text-gray-300">
+              <Link href={"#contact"} className="text-primary hover:text-gray-300">
                 contact
               </Link>
             </div>
@@ -36,7 +36,7 @@ const Footer = () => {
         </div>
 
         <p
-          className="text-center my-16"
+          className="text-center my-16 text-primary"
           style={{ fontFamily: "Source Code Pro, monospace" }}
         >
           &copy;2024 Monika Dangar | Web Developer
